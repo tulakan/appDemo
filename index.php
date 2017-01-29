@@ -16,5 +16,6 @@ function GetWeather($state,$country,$langauge,$waetherIcons){
         }
         return $weather;
 }
-GetWeather('ca', 'usa', 'en', 'true');
+$result = GetWeather('ca', 'usa', 'en', 'true');
+echo $result
 ?>
