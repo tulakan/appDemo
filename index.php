@@ -1,12 +1,4 @@
-
-
-<!-- <?php
-// echo "My first PHP script!";
-// echo "My first PHP script!";
-?>
- -->
-
- <?php 
+<?php 
 function GetWeather($state,$country,$langauge,$waetherIcons){
 // auf der Basis von http://www.web-spirit.de/webdesign-tutorial/9/Wetter-auf-eigener-Website-mit-Google-Weather-API
         $api = simplexml_load_string(utf8_encode(file_get_contents("http://www.google.com/ig/api?weather=".$state."-".$country."&hl=".$langauge)));
@@ -25,3 +17,4 @@ function GetWeather($state,$country,$langauge,$waetherIcons){
         return $weather;
 }
 GetWeather('ca', 'usa', 'en', 'true');
+?>
