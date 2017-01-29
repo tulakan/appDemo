@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 function GetWeather($state,$country,$langauge,$waetherIcons){
 // auf der Basis von http://www.web-spirit.de/webdesign-tutorial/9/Wetter-auf-eigener-Website-mit-Google-Weather-API
@@ -19,3 +20,6 @@ function GetWeather($state,$country,$langauge,$waetherIcons){
 $result = GetWeather('ca', 'usa', 'en', 'true');
 echo $result
 ?>
+=======
+<?php include_once("index.html"); ?>
+>>>>>>> 0819d1b13ea6b3d718d2c291fb2ed68d2e249edd
