@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Firebase คืออะไร เริ่มใช้งาน Firebase เบื้องต้น</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var firebaseRef = {};
+
+            angular.module('firebaseApp', [])
+            .controller('firebaseCtrl', function($http) {
+                var config = {
+                        apiKey: "AIzaSyDQRWCCXB4LlpZWttqqPKGO_yKBh62r-mM",
+                        authDomain: "appdemo-8ae93.firebaseapp.com",
+                        databaseURL: "https://appdemo-8ae93.firebaseio.com",
+                        storageBucket: "appdemo-8ae93.appspot.com",
+                        messagingSenderId: "976221073249"
+                      };
+                    firebase.initializeApp(config);
+                    firebaseRef = firebase.database().ref("sensorValue");
+                    firebaseRef.on('value', function(data) {
+                        console.log(data.val());
+                        document.getElementById("value").innerHTML = "sensor Value = " +data.val()
+                        var sendData = {sensorValue : data.val()}
+                            $http.post('bot.php', sendData).success(function(data){
+                            //This means that you have succeeded 
+                            console.log ("send sensor value successfull")
+                                }).error(function(){
+                                //This means that it failed
+                                console.log ("send sensor value fail")
+                                   })
+                    })
+            })
+        </script>
+    </head>
+    <body ng-app="firebaseApp">
+        <div ng-controller="firebaseCtrl">
+            <h1 id="value"></h1>
+        </div>
+    </body>
+</html>
