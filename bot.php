@@ -2,7 +2,7 @@
 $access_token = 'tr8HLJ2dhtefwQfJmfwNRaDmby+sPq+Hig5ut3kN/fehhXey8kttyk/aZCzi1/Xt+9CIYLHaLMUr0ZP58JvdTGHW0Xxqop3vA0CtHJsxkrcvNU20TtFntWrDlo30+QJFGXLW1of5cAfw1IDl0M5UqgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-//$sensorValue = file_get_contents("https://appdemo-8ae93.firebaseio.com/sensorValue.json");
+$sensorValue = file_get_contents("https://appdemo-8ae93.firebaseio.com/sensorValue.json");
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
