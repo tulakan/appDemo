@@ -26,7 +26,7 @@
                         var sendData = {sensorValue : data.val()}
                             $http.post('bot.php', sendData).success(function(data){
                             //This means that you have succeeded 
-                            console.log ("send sensor value "+"["+data.val()+"]"+ "successfull")
+                            console.log ("send sensor value "+"["+sendData.sensorValue+"]"+ "successfull")
                                 }).error(function(){
                                 //This means that it failed
                                 console.log ("send sensor value fail")
