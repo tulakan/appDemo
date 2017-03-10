@@ -27,12 +27,12 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => '1111'
             ];
-            $mes2 = [
-                'type' => 'text',
-                'text' => '2222'
-            ];
+//            $mes2 = [
+//                'type' => 'text',
+//                'text' => '2222'
+//            ];
 
-            $messages = array($mes1,$mes2);
+            $messages = $mes1;
 
 
 
