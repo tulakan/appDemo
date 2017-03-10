@@ -98,17 +98,17 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => '2222'
             ];
-//             $message3 = [
-//                 'type' => 'image',
-//                 'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
-//                 'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
-//             ];
+            $mes3 = [
+                'type' => 'image',
+                'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
+                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
+            ];
 
             // Make a POST Request to Messaging API to reply to sender
             $url = 'https://api.line.me/v2/bot/message/reply';
             $data = [
                 'replyToken' => $replyToken,
-                'messages' => [$mes1,$mes2]
+                'messages' => [$mes1,$mes2,$mes3]
             ];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
