@@ -13,31 +13,45 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+//			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
-//			$messages = [
-//				'type' => 'text',
-//				'text' => $sensorValue
-//			];
-
-            $mes1 = [
+			$bufferMessage = '';
+            $message1 = [
                 'type' => 'text',
-                'text' => '1111'
+                'text' => '40 %'
             ];
-            $mes2 = [
+            $message2 = [
                 'type' => 'text',
-                'text' => '2222'
+                'text' => 'ลำปางหนาวมากกก'
             ];
-            $messages = $mes1;
+            $message3 = [
+                'type' => 'image',
+                'originalContentUrl' => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg',
+                "previewImageUrl" => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg'
+            ];
+
+            if($event['events'][0]['message']['text'] == "ความชื้นในดินมีค่าเท่าไหร่"){
+                $bufferMessage = $message1;
+            }
+
+            if($event['events'][0]['message']['text'] == "สภาพอากาศเป็นยังไง"){
+                $bufferMessage = $message2;
+            }
+
+            if($event['events'][0]['message']['text'] == "ถ่ายรูปให้ดูหน่อย"){
+                $bufferMessage = $message3;
+            }
+
+            if($event['events'][0]['message']['text'] == "ขอข้อมูลทั้งหมด"){
+                $bufferMessage = [$message1,$message2,$message3];
+            }
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$mes1,$mes2],
+				'messages' => $bufferMessage,
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
