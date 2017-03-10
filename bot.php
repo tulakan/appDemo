@@ -97,16 +97,16 @@ if (!is_null($events['events'])) {
 
             $message1 = [
                 'type' => 'text',
-                'text' => '40 %'
+                'text' => '1111'
             ];
             $message2 = [
                 'type' => 'text',
-                'text' => 'ลำปางหนาวมากกก'
+                'text' => '2222'
             ];
             $message3 = [
                 'type' => 'image',
-                'originalContentUrl' => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg',
-                'previewImageUrl' => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg'
+                'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
+                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
             ];
 
             // Make a POST Request to Messaging API to reply to sender
