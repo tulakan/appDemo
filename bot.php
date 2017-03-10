@@ -27,14 +27,12 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => '1111'
             ];
-//            $mes2 = [
-//                'type' => 'text',
-//                'text' => '2222'
-//            ];
-
-            $messages = $mes1;
-
-
+            $mes2 = [
+                'type' => 'text',
+                'text' => '2222'
+            ];
+            $mesBuffer = [$mes1,$mes2];
+            $messages = $mesBuffer;
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
