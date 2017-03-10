@@ -95,11 +95,25 @@ if (!is_null($events['events'])) {
                 'text' => $text
             ];
 
+            $message1 = [
+                'type' => 'text',
+                'text' => '40 %'
+            ];
+            $message2 = [
+                'type' => 'text',
+                'text' => 'ลำปางหนาวมากกก'
+            ];
+            $message3 = [
+                'type' => 'image',
+                'originalContentUrl' => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg',
+                "previewImageUrl" => 'http://www.thaiarcheep.com/wp-content/uploads/2015/07/%E0%B8%97%E0%B8%B8%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-1-%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%94%E0%B9%89.jpg'
+            ];
+
             // Make a POST Request to Messaging API to reply to sender
             $url = 'https://api.line.me/v2/bot/message/reply';
             $data = [
                 'replyToken' => $replyToken,
-                'messages' => [$messages],
+                'messages' => [$messages,$message1,$message2,$message3],
             ];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
