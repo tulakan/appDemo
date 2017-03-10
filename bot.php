@@ -18,26 +18,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-//            $messages = array
-//            (
-//                array
-//                    (
-//                        'type' => 'text',
-//                        'text' => $sensorValue
-//                    ),
-//                array
-//                    (
-//                        'type' => 'image',
-//                        'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
-//                        'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
-//                    )
-//            );
-            $messages = [
- 				    'type' => 'text',
- 				    'text' => $sensorValue
-            ];
-
-
+			$messages = [
+				'type' => 'text',
+				'text' => $sensorValue
+			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
