@@ -20,10 +20,15 @@ if (!is_null($events['events'])) {
 // 			Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $sensorValue
+				'text' => $sensorValue,
+				
+				'type' => 'image',
+                    		'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
+                    		'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
+				
 			];
 			
-// 			$massages = array();
+// 			
 // 			$messages[0] = [
 // 				    'type' => 'text',
 // 				    'text' => $sensorValue
