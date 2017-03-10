@@ -17,22 +17,22 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
-// 			$messages = [
-// 				'type' => 'text',
-// 				'text' => $sensorValue
-// 			];
-			
-			$massages = array();
-			$messages[0] = [
-				    'type' => 'text',
-				    'text' => $sensorValue
-            		];
-            		$messages[1] = [
-                    		'type' => 'image',
-                    		'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
-                    		'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
+// 			Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $sensorValue
 			];
+			
+// 			$massages = array();
+// 			$messages[0] = [
+// 				    'type' => 'text',
+// 				    'text' => $sensorValue
+//             		];
+//             		$messages[1] = [
+//                     		'type' => 'image',
+//                     		'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
+//                     		'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
+// 			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
