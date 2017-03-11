@@ -18,9 +18,17 @@ if (!is_null($events['events'])) {
 
             $bufferMessage = [];
             //text message
+//            $message1 = [
+//                'type' => 'text',
+//                'text' => "ความชื้นในดิน : 40%"
+//            ];
+            $text1 = 'บรรทัดที่ 1';
+            $text2 = 'บรรทัดที่ 2';
+            $text3 = 'บรรทัดที่ 3';
+            $text4 = 'บรรทัดที่ 4';
             $message1 = [
                 'type' => 'text',
-                'text' => "ความชื้นในดิน : 40%\r\nบรรทัดที่สอง\r\n บรรทัดที่สาม"
+                'text' => $text1 . "\r\n" . $text2 . "\r\n" . $text3 . "\r\n" . $text4
             ];
             //text message
             $message2 = [
@@ -44,7 +52,7 @@ if (!is_null($events['events'])) {
             if($event['message']['text'] == "ถ่ายรูปให้ดูหน่อย"){
                 $bufferMessage[0] = $message3;
             }
-            if($event['message']['text'] == "ขอข้อม"){
+            if($event['message']['text'] == "ขอข้อมูลทั้งหมด"){
                 $bufferMessage[0] = $message3;
             }
 
