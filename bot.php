@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
 
-            $bufferMessage = "";
+            $bufferMessage = [];
             //text message
             $message1 = [
                 'type' => 'text',
