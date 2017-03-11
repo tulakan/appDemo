@@ -18,13 +18,13 @@ if (!is_null($events['events'])) {
 
             // Build message to reply back
             //text message
-//            $message = [
-//                'type' => 'text',
-//                'text' => 'ความชื้นในดิน 40%'
-//            ];
+            $message1 = [
+                'type' => 'text',
+                'text' => 'ความชื้นในดิน 40%'
+            ];
 
             //image message
-            $message = [
+            $message2 = [
                 'type' => 'image',
                 'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
                 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
             $url = 'https://api.line.me/v2/bot/message/reply';
             $data = [
                 'replyToken' => $replyToken,
-                'messages' => [$message],
+                'messages' => [$message1,$message2],
             ];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
