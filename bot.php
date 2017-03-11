@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
             //text message
             $message1 = [
                 'type' => 'text',
-                'text' => "ความชื้นในดิน : 40%"
+                'text' => "ความชื้นในดิน : 40%\r\nบรรทัดที่สอง\r\n บรรทัดที่สาม"
             ];
             //text message
             $message2 = [
@@ -42,6 +42,9 @@ if (!is_null($events['events'])) {
                 $bufferMessage[0] = $message2;
             }
             if($event['message']['text'] == "ถ่ายรูปให้ดูหน่อย"){
+                $bufferMessage[0] = $message3;
+            }
+            if($event['message']['text'] == "ขอข้อม"){
                 $bufferMessage[0] = $message3;
             }
 
