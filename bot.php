@@ -18,17 +18,17 @@ if (!is_null($events['events'])) {
 
             // Build message to reply back
             //text message
-            $message = [
-                'type' => 'text',
-                'text' => 'ความชื้นในดิน 40%'
-            ];
-//
-//            //image message
-//            $mes2 = [
-//                'type' => 'image',
-//                'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
-//                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
+//            $message = [
+//                'type' => 'text',
+//                'text' => 'ความชื้นในดิน 40%'
 //            ];
+
+            //image message
+            $message = [
+                'type' => 'image',
+                'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
+                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
+            ];
 
 //            $message = array(
 //                array('type' => 'text','text' => 'test massage 1'),
