@@ -36,13 +36,13 @@ if (!is_null($events['events'])) {
 
 
             if($event['message']['text'] == "ความชื้นในดินมีค่าเท่าไหร่"){
-                $bufferMessage = $message1;
+                $bufferMessage[0] = $message1;
             }
             if($event['message']['text'] == "สภาพอากาศเป็นไง"){
-                $bufferMessage = $message2;
+                $bufferMessage[0] = $message2;
             }
             if($event['message']['text'] == "ถ่ายรูปให้ดูหน่อย"){
-                $bufferMessage = $message3;
+                $bufferMessage[0] = $message3;
             }
 
 
@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
             $data = [
                 'replyToken' => $replyToken,
                 //'messages' => [$message1,$message2],
-                'messages' => $bufferMessage
+                'messages' => $bufferMessage,
             ];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
