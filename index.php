@@ -1,2 +1,2 @@
-<?php include_once("firebaseTest.html"); ?>
+<?php //include_once("firebaseTest.html"); ?>
 
