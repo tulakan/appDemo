@@ -18,10 +18,10 @@ if (!is_null($events['events'])) {
 
             // Build message to reply back
             //text message
-//            $mes1 = [
-//                'type' => 'text',
-//                'text' => 'ความชื้นในดิน 40% สภาพอากาศดีมาก'
-//            ];
+            $message = [
+                'type' => 'text',
+                'text' => 'ความชื้นในดิน 40%'
+            ];
 //
 //            //image message
 //            $mes2 = [
@@ -30,10 +30,10 @@ if (!is_null($events['events'])) {
 //                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
 //            ];
 
-            $message = array(
-                array('type' => 'text','text' => 'test massage 1'),
-                array('type' => 'text','text' => 'test massage 2')
-            );
+//            $message = array(
+//                array('type' => 'text','text' => 'test massage 1'),
+//                array('type' => 'text','text' => 'test massage 2')
+//            );
 
             // Make a POST Request to Messaging API to reply to sender
             $url = 'https://api.line.me/v2/bot/message/reply';
