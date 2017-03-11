@@ -20,15 +20,13 @@ if (!is_null($events['events'])) {
                     'type' => 'text',
                     'text' => "Hello !"
                 ];
+            }else{
+                $message1 = [
+                    'type' => 'text',
+                    'text' => 'not hello'
+                ];
             }
-
-            // Build message to reply back
-            //text message
-            $message1 = [
-                'type' => 'text',
-                'text' => 'ความชื้นในดิน 40%'
-            ];
-
+            
             //image message
             $message2 = [
                 'type' => 'image',
