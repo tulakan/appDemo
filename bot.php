@@ -15,30 +15,44 @@ if (!is_null($events['events'])) {
             $text = $event['message']['text'];
             // Get replyToken
             $replyToken = $event['replyToken'];
-            if($event['message']['text'] == "สวัสดี"){
-                $message1 = [
-                    'type' => 'text',
-                    'text' => "Hello !"
-                ];
-            }else{
-                $message1 = [
-                    'type' => 'text',
-                    'text' => 'not hello'
-                ];
-            }
-            
-            //image message
+
+            $bufferMessage = "";
+            //text message
+            $message1 = [
+                'type' => 'text',
+                'text' => "ความชื้นในดิน : 40%"
+            ];
+            //text message
             $message2 = [
+                'type' => 'text',
+                'text' => 'สภาพอากาศดีมากกกก'
+            ];
+            //image message
+            $message3 = [
                 'type' => 'image',
                 'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
                 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
             ];
 
+
+            if($event['message']['text'] == "ความชื้นในดินมีค่าเท่าไหร่"){
+                $bufferMessage = $message1;
+            }
+            if($event['message']['text'] == "สภาพอากาศเป็นไง"){
+                $bufferMessage = $message2;
+            }
+            if($event['message']['text'] == "ถ่ายรูปให้ดูหน่อย"){
+                $bufferMessage = $message3;
+            }
+
+
+
             // Make a POST Request to Messaging API to reply to sender
             $url = 'https://api.line.me/v2/bot/message/reply';
             $data = [
                 'replyToken' => $replyToken,
-                'messages' => [$message1,$message2],
+                //'messages' => [$message1,$message2],
+                'messages' => $bufferMessage
             ];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
