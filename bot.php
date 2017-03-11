@@ -15,6 +15,12 @@ if (!is_null($events['events'])) {
             //$text = $event['message']['text'];
             // Get replyToken
             $replyToken = $event['replyToken'];
+            if($event['message']['type'] == "สวัสดี"){
+                $message1 = [
+                    'type' => 'text',
+                    'text' => "Hello !"
+                ];
+            }
 
             // Build message to reply back
             //text message
@@ -29,11 +35,6 @@ if (!is_null($events['events'])) {
                 'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
                 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
             ];
-
-//            $message = array(
-//                array('type' => 'text','text' => 'test massage 1'),
-//                array('type' => 'text','text' => 'test massage 2')
-//            );
 
             // Make a POST Request to Messaging API to reply to sender
             $url = 'https://api.line.me/v2/bot/message/reply';
