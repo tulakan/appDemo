@@ -12,7 +12,7 @@ if (!is_null($events['events'])) {
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent
-            $text = $event['message']['text'];
+            //$text = $event['message']['text'];
             // Get replyToken
             $replyToken = $event['replyToken'];
 
@@ -26,8 +26,8 @@ if (!is_null($events['events'])) {
             //image message
             $message = [
                 'type' => 'image',
-                'originalContentUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg',
-                'previewImageUrl' => 'http://www.nanagarden.com/Picture/Product/400/158328.jpg'
+                'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg',
+                'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg'
             ];
 
 //            $message = array(
